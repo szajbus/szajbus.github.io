@@ -1,0 +1,50 @@
+body {
+  font-family: 'Play', sans-serif;
+  background: #296ad4;
+  background: -moz-linear-gradient(left, #296ad4 0%, #3aaaed 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #296ad4), color-stop(100%, #3aaaed));
+  background: -webkit-linear-gradient(left, #296ad4 0%, #3aaaed 100%);
+  background: -o-linear-gradient(left, #296ad4 0%, #3aaaed 100%);
+  background: -ms-linear-gradient(left, #296ad4 0%, #3aaaed 100%);
+  background: linear-gradient(to right, #296ad4 0%, #3aaaed 100%);
+}
+
+div {
+  margin: 75px 0;
+  text-align: center;
+}
+
+.photo img {
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  border-radius: 75px;
+}
+
+.name h1 {
+  display: inline;
+  color: #2b89e4;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 15px 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links ul li {
+  display: inline;
+  margin: 0 14px;
+}
+
+a {
+  color: #b2ceff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
