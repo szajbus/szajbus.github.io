@@ -52,6 +52,7 @@ div {
 a {
   color: #b2ceff;
   text-decoration: none;
+  border-bottom: 1px #b2ceff dotted;
 }
 
 a:hover {
