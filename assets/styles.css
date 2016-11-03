@@ -7,10 +7,10 @@ body {
   background: -o-linear-gradient(left, #296ad4 0%, #3aaaed 100%);
   background: -ms-linear-gradient(left, #296ad4 0%, #3aaaed 100%);
   background: linear-gradient(to right, #296ad4 0%, #3aaaed 100%);
+  color: #fff;
 }
 
 div {
-  margin: 75px 0;
   text-align: center;
 }
 
@@ -18,6 +18,11 @@ div {
   -webkit-border-radius: 75px;
   -moz-border-radius: 75px;
   border-radius: 75px;
+  margin: 40px 0;
+}
+
+.name {
+  margin: 40px 0;
 }
 
 .name h1 {
@@ -28,6 +33,10 @@ div {
   padding: 15px 30px;
   font-weight: 600;
   text-align: center;
+}
+
+.bio {
+  margin: 50px 0 30px;
 }
 
 .links ul {
