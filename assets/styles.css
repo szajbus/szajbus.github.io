@@ -10,8 +10,13 @@ body {
   color: #fff;
 }
 
-div {
+section {
   text-align: center;
+  margin: 40px 0;
+}
+
+section.photo {
+  margin-top: 0;
 }
 
 .photo img {
@@ -47,6 +52,13 @@ div {
 .links ul li {
   display: inline;
   margin: 0 14px;
+}
+
+.opensource {
+  font-size: 13px;
+  line-height: 20px;
+  text-align: left;
+  margin: 20px 0;
 }
 
 a {
