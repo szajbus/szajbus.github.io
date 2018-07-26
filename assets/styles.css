@@ -237,7 +237,7 @@ p {
 
 .footer {
   font-size: smaller;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 ul {
@@ -557,5 +557,9 @@ a {
 
   .footer {
     padding-bottom: 0;
+  }
+
+  .hidden-print {
+    display: none;
   }
 }
