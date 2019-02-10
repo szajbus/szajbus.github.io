@@ -1,0 +1,17 @@
+name: Michał Szajbe
+description:
+meta_description: "Michał Szajbe - Blog"
+
+markdown: kramdown
+highlighter: rouge
+logo: false
+paginate: 15
+baseurl: /
+domain_name: 'https://szajbe.pl'
+google_analytics: 'UA-70089577-1'
+plugins: [jekyll-paginate]
+fenced_code_blocks: true
+
+# Details for the RSS feed generator
+url:            'https://szajbe.pl'
+author:         'Michał Szajbe'
