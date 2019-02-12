@@ -20,6 +20,12 @@ html, body {
   line-height: 1.5;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', Helvetica, sans-serif;
+  letter-spacing: 0.01rem;
+  text-indent: 0;
+}
+
 h1 {
   font-weight: normal;
   font-size: 2.25rem;
@@ -567,4 +573,31 @@ a {
   .hidden-print {
     display: none;
   }
+}
+
+.main-header {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5rem;
+    text-align: center;
+    background: #222 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.main-header .inner {
+    width: 80%;
+}
+
+.main-nav {
+    position: relative;
+    padding: 35px 40px;
+    margin: 0 0 30px 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
 }
