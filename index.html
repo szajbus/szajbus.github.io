@@ -43,12 +43,12 @@ cover: false
       {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
     </section>
     <footer class="post-meta">
+      <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+        {{ post.date | date: "%b %d, %Y" }}
+      </time>
       {% if post.categories.size > 0 %}
         {{ post.categories | array_to_sentence_string | prepend: 'on ' }}
       {% endif %}
-      <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
-        {{ post.date | date_to_string }}
-      </time>
     </footer>
   </article>
 
