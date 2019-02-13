@@ -417,6 +417,23 @@ margin on the iframe, cause it breaks stuff. */
     width: 80%;
 }
 
+.main-header .photo-credits {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+
+    a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: rgba(255, 255, 255, 0.3);
+    }
+}
+
 .main-nav {
     position: relative;
     padding: 35px 40px;
@@ -612,6 +629,7 @@ margin on the iframe, cause it breaks stuff. */
 
     a {
       margin: 0 10px;
+      color: rgba(255,255,255,0.8);
     }
 }
 
@@ -1285,6 +1303,10 @@ body:not(.post-template) .post-title {
         padding: 15% 0;
     }
 
+    .main-header .photo-credits {
+      display: none
+    }
+
     .scroll-down,
     .home-template .main-header:after { display: none; }
 
@@ -1578,7 +1600,7 @@ body:not(.post-template) .post-title {
     }
 
     .post-footer .author {
-        margin: 0 0 2rem 0;
+        margin: 2rem 0 2rem 0;
         padding: 0 0 1.6rem 0;
         border-bottom: #EBF2F6 1px dashed;
     }

@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Home
-cover: false
+cover: "assets/images/cover.jpg"
+cover_credits: >
+  Photo by <a href="https://unsplash.com/photos/fphpSh9KBXE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" rel="nofollow">Dave Michuda</a> on <a href="https://unsplash.com/search/photos/coffee?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" rel="nofollow">Unsplash</a>
 ---
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
@@ -17,13 +19,16 @@ cover: false
     <div class="main-header-content inner">
       <h1 class="page-title">{{ site.name }}</h1>
       <div class="page-description">
-        <a href="{{ site.baseurl }}">Articles</a>
+        <a href="{{ site.baseurl }}#content" class="scroll">Articles</a>
         <a href="https://github.com/szajbus" rel="nofollow">GitHub</a>
-        <a href='{{ site.baseurl }}resume.html'>Resume</a>
+        <a href='{{ site.baseurl }}resume.html'>Résumé</a>
       </div>
     </div>
   </div>
-  <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  <a class="scroll-down scroll icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  {% if page.cover_credits %}
+    <span class="photo-credits">{{ page.cover_credits }}</span>
+  {% endif %}
 </header>
 
 
