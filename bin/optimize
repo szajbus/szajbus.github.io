@@ -1,0 +1,2 @@
+#!/bin/bash
+convert -sampling-factor 4:2:0 -strip -quality 85 -interlace Plane -colorspace RGB -resize 1920x $1 $2
