@@ -31,7 +31,7 @@
     <meta name="twitter:description" content="{{ page.excerpt }}" />
   {% endif -%}
   {% if page.cover -%}
-    <meta name="twitter:image" content="{{ page.cover }}" />
+    <meta name="twitter:image" content="{{ site.domain_name }}{{ page.cover }}" />
   {% endif -%}
 
   <meta name="og:url" content="{{ site.domain_name }}/{{ page.url }}" />
@@ -41,7 +41,7 @@
     <meta name="og:description" content="{{ page.excerpt }}" />
   {% endif -%}
   {% if page.cover -%}
-    <meta name="og:image" content="{{ page.cover }}" />
+    <meta name="og:image" content="{{ site.domain_name }}{{ page.cover }}" />
   {% endif -%}
 
 </head>
