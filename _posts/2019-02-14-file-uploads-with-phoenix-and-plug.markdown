@@ -5,6 +5,8 @@ date: "2019-02-13 09:00"
 categories: Elixir
 excerpt: "Base64-encoded files may be a special case in your app, but with the help of Plug.Upload they can be handled as easily as regular files uploaded via HTML forms."
 cover: "/assets/images/plug.jpg"
+cover_credits: >
+  Photo by <a href="https://unsplash.com/photos/ZUabNmumOcA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" rel="nofollow">Steve Johnson</a> on Unsplash
 ---
 
 Handling external files is one of the basic tasks for many web applications. Profile pictures, attachments, resources fetched from remote services, all are examples of the above.

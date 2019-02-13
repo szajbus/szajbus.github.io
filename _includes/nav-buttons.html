@@ -2,4 +2,8 @@
   <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
     <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home</a>
   </nav>
+
+  {% if page.cover_credits %}
+    <span class="photo-credits">{{ page.cover_credits }}</span>
+  {% endif %}
 </header>
