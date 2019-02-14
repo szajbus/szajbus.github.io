@@ -6,8 +6,7 @@ My jekyll-powered site.
 
 Install gems
 
-    gem install jekyll
-    gem install rouge
+    bundle install
 
 Serve locally
 
