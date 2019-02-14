@@ -9,7 +9,9 @@ paginate: 15
 baseurl: /
 domain_name: "https://szajbe.pl"
 google_analytics: "UA-70089577-1"
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
 fenced_code_blocks: true
 
 url: "https://szajbe.pl"
