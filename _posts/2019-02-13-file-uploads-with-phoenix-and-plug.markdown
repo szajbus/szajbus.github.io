@@ -7,7 +7,7 @@ excerpt: "Base64-encoded files may be a special case in your app, but with the h
 cover: "/assets/images/plug.jpg"
 cover_credits: >
   Photo by <a href="https://unsplash.com/photos/ZUabNmumOcA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" rel="nofollow">Steve Johnson</a> on Unsplash
-disqus: true
+disqus: false
 ---
 
 Handling external files is one of the basic tasks for many web applications. Profile pictures, attachments, resources fetched from remote services, all are examples of the above.
