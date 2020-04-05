@@ -942,6 +942,15 @@ body:not(.post-template) .post-title {
     color: #50585D;
 }
 
+.post-footer .contribute {
+    margin: 3rem 1.6rem 1.6rem 0;
+    text-decoration: none;
+}
+
+.post-footer .contribute p {
+    font-size: 1.4rem;
+}
+
 /* The subscribe icon on the footer */
 .subscribe {
     width: 28px;
