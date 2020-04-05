@@ -60,3 +60,10 @@
 	.vi { color: #008080 } /* Name.Variable.Instance */
 	.il { color: #009999 } /* Literal.Number.Integer.Long */
 }
+
+@media only screen and (max-width: 480px) {
+	.highlight {
+		font-size: 0.9em;
+		line-height: 1.6em;
+	}
+}
