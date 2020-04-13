@@ -1,5 +1,5 @@
 name: Michał Szajbe
-description: Personal blog
+description: My dev blog
 meta_description: "Michał Szajbe - Blog"
 
 markdown: kramdown
@@ -7,14 +7,14 @@ highlighter: rouge
 logo: false
 paginate: 15
 baseurl: /
-domain_name: "https://szajbe.pl"
+domain_name: "https://szajbus.dev"
 google_analytics: "UA-70089577-1"
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
 fenced_code_blocks: true
 
-url: "https://szajbe.pl"
+url: "https://szajbus.dev"
 author: "Michał Szajbe"
 twitter_handle: szajbus
 disqus_shortname: michal-szajbe
