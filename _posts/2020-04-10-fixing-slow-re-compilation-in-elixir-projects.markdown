@@ -16,11 +16,13 @@ Correctness can be checked at multiple stages of the development process, but th
 
 We rarely write large chunks of code in one go, then test it as a whole, because that means unnecessary risk of wasted effort if it turns out not to work as expected. We’d rather make small, deliberate changes, then quickly test and adjust if needed before going forward.
 
-For that however, our feedback loops must be as short as possible. That’s why we strive for fast test suites and invest time in optimizing the compilation process, because they directly affect our workflow. Slow feedback contributes to lost focus at the very least.
+For that however, our feedback loops must be as short as possible. We strive for fast test suites and invest time in optimizing the compilation process, because they directly affect our workflow. Slow feedback contributes to lost focus at the very least.
 
 > Consider the rate of feedback as your speed limit. [^1]
 
-When working on Elixir projects, slow recompilation can be especially annoying. Even the smallest of changes can result in recompilation of large part of the codebase.
+When working with compiled languages, and Elixir is no exception here, we are destined to spend some time waiting for the compiler. And there may be times when even the smallest of changes result in recompilation of significant parts of the codebase. These situations quickly get annoying.
+
+Ever experienced this?
 
 ```bash
 $ touch some/project/module.ex
@@ -30,13 +32,13 @@ Running tests...
 Compiling 791 files (.ex)
 ```
 
-That's a long wait before test even run! Let’s find why and how to fix this.
+That's a long wait before tests even run! Let’s find why and how to fix this.
 
 ## How compiler decides what to recompile
 
 Elixir compiler uses [lexical tracker](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/kernel/lexical_tracker.ex) to track references to modules, function dispatches, usage of aliases, imports and requires in the code, etc. It uses this information to build project modules' dependency graph and ultimately optimize its own work.
 
-When module changes, the compiler analyzes the dependency graph, finds its dependants and marks them as stale. Next, dependants of these are marked as stale as too. The process is repeated until the whole dependency graph is traversed and all the modules stale are identified.
+When module changes, the compiler finds its dependants by analyzing the dependency graph and marks them as stale. Next, dependants of these are marked as stale too. The process is repeated until the whole dependency graph is traversed and all the stale modules are identified.
 
 Whether a stale module will be recompiled depends on the type of dependency it has to a module that "made" it stale.
 
@@ -125,25 +127,19 @@ This fact is going to shape our strategy when trying to avoid recompilation hell
 
 ### Fixing your project
 
-In large projects, it’s not uncommon to see cycles in the dependency graph. If there happen to be compile-time dependency between member modules of such cycles, any change will trigger a cascade-style recompilation of other modules in that cycle as well as ones depending on them and so on.
+In large projects, it’s not uncommon to see cycles in the dependency graph. If there happen to be a compile-time dependency between member modules of such cycle, any change will trigger a cascade-style recompilation of other modules in that cycle as well as ones depending on them and so on.
 
 That’s why even changes that appear simple on the surface, sometimes get you few hundred files to recompile... and ruined workflow.
 
-I’ve been in such projects myself and unfortunately it’s often not easy to break these cycles. Not without serious refactoring, at least.
+As removing cycles from the dependency graph is rarely a trivial task, it's better to try to prevent them happening in the first place. [^4]
 
-So, as always, it pays off to consider architecture upfront, instead of counting on discovering good one by accident.
+Nonetheless, there are some dependency-breaking techniques listed below that may apply to any project.
 
-I personally look forward to using such tools as [boundary](https://github.com/sasa1977/boundary) which makes cross-module dependencies explicit. Umbrella apps can also be helpful in that aspect as they don’t allow cyclic dependencies between individual apps.
+##### As a prerequisite, get familiar with *xref* tool.
 
-Nonetheless, there are some helpful techniques listed below that may apply to any project.
-
-As a prerequisite, get familiar with *xref* tool.
-
-It’s built into `mix` and can help you indentify super-connected modules in your project and modules that have deep subtrees of dependencies [^4]. Simply use `mix help xref` to start.
+It’s built into `mix` and can help you indentify super-connected modules in your project and modules that have deep subtrees of dependencies [^5]. Simply use `mix help xref` to start.
 
 There's also a short and practical overview of the tool written by Wojtek Mach on [Dashbit's blog](https://dashbit.co/blog/speeding-up-re-compilation-of-elixir-projects).
-
-I'll start with the one I consider most important.
 
 #### Keep you library code clean
 
@@ -234,7 +230,7 @@ Now let’s add a pretty standard function `@spec` that list these structs as ac
 @spec say(%User{} | %Admin{}) :: binary()
 ```
 
-Suddenly, we get more strict compile-time deps [^5].
+Suddenly, we get more strict compile-time deps [^6].
 
 ```bash
 $ mix xref graph
@@ -265,11 +261,11 @@ end
 
 ## Summary
 
-Sometimes a quick, small change may result in removal of a crucial dependency and break a cycle in your dependency graph, yielding tangible improvements. Other times, some improvements may come at the expense of code readability and understandability, and simply will not be worth it.
+Sometimes a quick, small change may result in removal of a crucial dependency and break a cycle in your dependency graph, yielding tangible improvements in recompilation speed. Other times, some improvements may come at the expense of code readability and understandability, and simply will not be worth it.
 
 Pay attention. The compiler, through slow recompilation, may be signalling problems in your code. It may prompt you to rethink your recent architectural decisions.
 
-Issues are generally easier and cheaper to fix when detected early and recompilation that's slowing down is a plainly visible warning sign.
+Issues are generally easier and cheaper to fix when detected early and recompilation that's slowing down is a plainly visible warning sign you probably should take seriously.
 
 [^1]: D. Thomas, A. Hunt. (2020). *The Pragmatic Programmer, 20th Anniversary Edition*. Pearson Education, Inc.
 
@@ -277,6 +273,8 @@ Issues are generally easier and cheaper to fix when detected early and recompila
 
 [^3]: Until I received explanation from Jason Axelson. See [Implicit compile-time dependencies](https://elixirforum.com/t/implicit-compile-time-dependencies/28988) in Elixir Forum.
 
-[^4]: Technically it’s a graph, not a tree, but *xref* displays it as such.
+[^4]: I personally look forward to using such tools as [boundary](https://github.com/sasa1977/boundary) which makes cross-module dependencies explicit. Umbrella projects can also be helpful in that aspect as they don’t allow cyclic dependencies between individual apps.
 
-[^5]: I actually suspect this is a bug and plan to investigate it.
+[^5]: Technically it’s a graph, not a tree, but *xref* displays it as such.
+
+[^6]: I actually suspect this is a bug and plan to investigate it.
