@@ -1,7 +1,7 @@
 ---
 layout: "post"
-title: "Fixing recompilation in Elixir projects"
-date: "2020-04-10 08:00:00"
+title: "Understanding and fixing recompilation in Elixir projects"
+date: "2020-04-14 08:00:00"
 categories: Elixir
 excerpt: "Slow recompilation means slow feedback loop and distrupted workflow. Let's find out how to fix this."
 cover: "/assets/images/slow.jpg"
