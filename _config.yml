@@ -1,0 +1,11 @@
+title: Michał Szajbe
+email: michal.szajbe@gmail.com
+description: >-
+  My personal space.
+baseurl: ""
+url: "https://szajbus.dev"
+twitter_username: szajbus
+github_username: szajbus
+
+plugins:
+  - jekyll-feed
