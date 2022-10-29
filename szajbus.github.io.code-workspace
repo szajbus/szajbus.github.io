@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "liquid.format.enable": true,
+		"files.associations": {
+			"*.html": "liquid"
+		}
+  }
+}

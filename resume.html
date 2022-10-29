@@ -1,0 +1,102 @@
+---
+layout: "default"
+title: "Michał Szajbe - Resume"
+description: >-
+  Software Enginner with 15+ years of experience in building and maintaining web applications and back-end systems in various business domains.
+---
+
+<article class="resume">
+  <header>
+    <h1>Michał Szajbe</h1>
+
+    <ul>
+      <li><a href="mailto:michal.szajbe@gmail.com">michal.szajbe@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/michalszajbe/">linkedin.com/in/michalszajbe</a></li>
+      <li><a href="https://github.com/szajbus">github.com/szajbus</a></li>
+    </ul>
+
+  </header>
+
+  <hr/>
+
+  <section>
+    <h2>About</h2>
+
+    <p>
+      Software Enginner with 15+ years of experience in building and maintaining web applications and back-end systems in various business domains. Dedicated to delivering quality, efficient solutions to challenging problems, willing to take ownership of core components. Team player, continuous learner, open source contributor.
+    </p>
+  </section>
+
+  <hr/>
+
+  <section>
+    <h2>Experience</h2>
+
+    <ul>
+      {%- assign sorted_jobs = site.jobs | sort: "end_date", "last" | reverse -%}
+      {% for job in sorted_jobs %}
+        <li>
+          <h3>{{ job.title }}</h3>
+          <div>
+            {%- if job.link -%}
+              <a href="{{ job.link }}" rel="nofollow">{{ job.company }}</a>
+            {%- else -%}
+              {{ job.company }}
+            {%- endif -%}
+
+          </div>
+          <div class="meta">
+            {{ job.start_date | date: site.theme_config.job_date_format }}
+            -
+            {% if job.end_date %}
+              {{ job.end_date | date: site.theme_config.job_date_format }}
+            {% else %}
+              present
+            {% endif %}
+
+            {% if job.type %}
+              ({{ job.type }})
+            {% endif %}
+          </div>
+
+          {% if job.content %}
+            <p>
+              {{ job.content }}
+            </p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <hr/>
+
+  <section>
+    <h2>Education</h2>
+
+    <ul>
+      {%- assign sorted_education = site.education | sort: "start_date" | reverse -%}
+      {% for edu in sorted_education %}
+        <li>
+          <h3>{{ edu.major }}</h3>
+          <div>{{ edu.school }}</div>
+          <div class="meta">
+            {{ edu.start_date | date: "%Y" }}
+            -
+            {% if edu.end_date %}
+              {{ edu.end_date | date: "%Y" }}
+            {% else %}
+              present
+            {% endif %}
+          </div>
+
+          {% if edu.content %}
+            <p>
+              {{ edu.content }}
+            </p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</article>

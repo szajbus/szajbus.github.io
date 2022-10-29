@@ -6,6 +6,16 @@ baseurl: ""
 url: "https://szajbus.dev"
 twitter_username: szajbus
 github_username: szajbus
+github_repo: szajbus/szajbus.github.io
 
 plugins:
   - jekyll-feed
+
+collections:
+  - education
+  - jobs
+
+theme_config:
+  date_format: "%Y-%m-%d"
+  human_date_format: "%b %d, %Y"
+  job_date_format: "%b %Y"

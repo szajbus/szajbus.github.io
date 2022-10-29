@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<h1>Hi, folks!</h1>
+
+<p>
+  I'm Michał Szajbe, a software engineer working remotely from Poland. Welcome to my little space on the web.
+</p>
+
+<h2>Articles</h2>
+
+<ul class="articles">
+  {%- for post in site.posts -%}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span>{{- post.date | date: site.theme_config.human_date_format -}}</span>
+      <p>{{- post.excerpt }}</p>
+    </li>
+  {%- endfor -%}
+</ul>
