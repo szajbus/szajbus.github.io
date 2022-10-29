@@ -10,6 +10,8 @@ github_repo: szajbus/szajbus.github.io
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jemoji
 
 collections:
   - education
