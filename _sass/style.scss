@@ -158,6 +158,19 @@ ul.articles {
 }
 
 .resume {
+  header {
+    position: relative;
+
+    .photo {
+      border-radius: 45px;
+      width: 90px;
+      height: 90px;
+      margin: 0.375rem 0;
+      position: absolute;
+      top: -26px;
+      right: 20px;
+    }
+  }
 
   h3 {
     margin: 3em 0 0 0;
@@ -168,12 +181,6 @@ ul.articles {
   }
 }
 
-.photo {
-  border-radius: 45px;
-  width: 90px;
-  height: 90px;
-  margin: 0.375rem 0;
-}
 
 footer.page-footnote {
   margin-top: 4rem;
