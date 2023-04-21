@@ -1,5 +1,8 @@
+@import 'variables';
+
 .highlight {
-  background: #F7FAFB;
+  background: $code-bg-color;
+
   .bp { color: #999999; } /* Name.Builtin.Pseudo */
   .c { color: #999988; } /* Comment */
   .c1 { color: #999988; } /* Comment.Single */
@@ -63,8 +66,9 @@
 
 @media (prefers-color-scheme: dark) {
   .highlight {
-    color: #f8f8f2;
-    background-color: #272822;
+    background-color: $dark-code-bg-color;
+    color: $dark-code-color;
+
     .c { color: #75715e; }
     .c1 { color: #75715e; }
     .cd { color: #75715e; }
@@ -116,7 +120,7 @@
     .sr { color: #a1efe4; }
     .ss { color: #a6e22e; }
     .sx { color: #a6e22e; }
-    .w { color: #f8f8f2; background-color: #272822; }
+    .w { color: #f8f8f2; }
   }
 }
 

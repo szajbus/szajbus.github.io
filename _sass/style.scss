@@ -1,6 +1,8 @@
+@import 'variables';
+
 :root {
-  background-color: #fff;
-  color: #000;
+  background-color: $bg-color;
+  color: $primary-color;
 }
 
 html { height: 100%; }
@@ -22,21 +24,24 @@ h2, h3, h4, h5, h6 {
   margin-top: 3rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: $secondary-color;
+}
+
 hr {
   margin: 2rem 0;
 }
 
 p {
   margin: 1.25rem 0;
-  color: #555;
 }
 
 a {
-  color: #0058c3;
+  color: $link-color;
   text-decoration: none;
 
   :visited {
-    color: #0058c3;
+    color: $link-color;
   }
 }
 
@@ -45,7 +50,7 @@ li {
 }
 
 *:target {
-  background: #fef1c8;
+  background: $target-bg-color;
 }
 
 .wrap {
@@ -68,11 +73,11 @@ nav {
     &.home {
       font-family: monospace;
       font-weight: 600;
-      color: #000;
+      color: $secondary-color;
       margin-left: 0;
 
       :visited {
-        color: #000;
+        color: $secondary-color;
       }
     }
   }
@@ -82,7 +87,7 @@ hr {
   margin: 3rem auto;
   text-align: center;
   width: 100%;
-  border: 1px 0 0 0  solid #ccc;
+  border: 1px 0 0 0 solid $hr-color;
 }
 
 table {
@@ -90,7 +95,7 @@ table {
 }
 
 table, th, td {
-  border: thin solid black;
+  border: thin solid $table-border-color;
   border-collapse: collapse;
   padding: 0.4rem;
 }
@@ -100,8 +105,9 @@ code {
   font-family: monospace;
   font-size: 0.85em;
   white-space: pre-wrap;
-  background: #f7fafb;
-  border: #e3eaf3 1px solid;
+  background: $code-bg-color;
+  color: $code-color;
+  border: $code-border-color 1px solid;
   border-radius: 4px;
   font-feature-settings: 'liga' 0, 'onum' 1, 'kern' 1;
   font-variant-ligatures: none;
@@ -137,11 +143,13 @@ img {
 }
 
 ul {
-  list-style: none;
+  list-style: disc;
   padding-left: 0;
 }
 
 ul.articles {
+  list-style: none;
+
   li {
     margin-bottom: 2rem;
 
@@ -178,6 +186,10 @@ ul.articles {
     margin: 3em 0 0 0;
   }
 
+  ul {
+    list-style: none;
+  }
+
   .meta {
     font-size: smaller;
   }
@@ -191,47 +203,58 @@ footer.page-footnote {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    background-color: #222;
-    color: #bbb;
+    background-color: $dark-bg-color;
+    color: $dark-primary-color;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-secondary-color;
   }
 
   p {
-    color: #9f9f9f;
+    color: $dark-primary-color;
   }
 
   a {
-    color: #00adb5;
+    color: $dark-link-color;
 
     :visited {
-      color: #00adb5;
+      color: $dark-link-color;
     }
   }
 
   nav {
     a {
       &.home {
-        color: #bbb;
+        color: $dark-secondary-color;
 
         :visited {
-          color: #bbb;
+          color: $dark-secondary-color;
         }
       }
     }
   }
 
   code {
-    background: #272822;
-    border-color: #555;
+    background: $dark-code-bg-color;
+    color: $dark-code-color;
+    border-color: $dark-code-border-color;
+  }
+
+  hr {
+    border-color: $dark-hr-color;
+  }
+
+  table, th, td {
+    border-color: $dark-table-border-color
   }
 
   *:target {
-    p {
-      color: #333;
-    }
+    background: $dark-target-bg-color;
 
     code {
-      background: #272822;
-      color: #f8f8f2;
+      background: $dark-code-bg-color;
+      color: $code-color;
     }
   }
 }
