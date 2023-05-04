@@ -25,17 +25,26 @@
 
           <footer>
             <p>
-              Hey, I'm Michał Szajbe. I hope you enjoyed this piece as much as I did writing it. If you see a mistake or think that something can be improved, please
-              <a href="https://github.com/{{ site.github_repo }}/issues" rel="nofollow" target="_blank">let me know</a>.
-            </p>
-
-            <p>
-              You can read my other
+              Hey, I'm Michał Szajbe. I hope you enjoyed this piece as much as I did writing it.
+              <br/>
+              You can comment on it below, read my other
               <a href="/articles">articles</a>
               and
               <a href="https://twitter.com/{{ site.twitter_username }}" rel="nofollow" target="_blank">follow me on twitter</a>. Cheers!
             </p>
           </footer>
+
+          <hr/>
+
+          <section>
+            <script src="https://utteranc.es/client.js"
+                    repo="{{ site.github_repo }}"
+                    issue-term="pathname"
+                    theme="preferred-color-scheme"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+          </section>
         </article>
 
         {%- include foot.html -%}
