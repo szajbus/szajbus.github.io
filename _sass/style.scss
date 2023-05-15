@@ -142,9 +142,14 @@ img {
   }
 }
 
+ol {
+  list-style: decimal;
+  padding-left: 24px;
+}
+
 ul {
   list-style: disc;
-  padding-left: 0;
+  padding-left: 24px;
 }
 
 ul.articles {
