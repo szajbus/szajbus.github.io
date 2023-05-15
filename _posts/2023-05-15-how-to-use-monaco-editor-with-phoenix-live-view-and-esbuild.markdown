@@ -3,7 +3,7 @@ layout: "post"
 title: "How to use Monaco editor with Phoenix LiveView and esbuild"
 date: "2023-05-15 12:00:00"
 categories: Elixir
-excerpt: "Monaco is state-of-the-art browser-based code editor that powers VS Code. Let's see how to integrate it with Phoenix LiveView through esbuild."
+excerpt: "Monaco is state-of-the-art browser-based code editor that powers VS Code. Let's see how to integrate it with Phoenix LiveView using esbuild."
 ---
 
 Monaco Editor is state-of-the-art code editor, packed with features like syntax coloring, IntelliSense[^1], validation and much more. It powers VS Code and since it is browser-based, it can be integrated into web-apps too. If you ever used Elixir's Livebook, you've seen it action.
@@ -135,7 +135,7 @@ config :tailwind,
 
 Monaco provides syntax coloring for myriad of programming languages (it's even possible to add one for your custom language if needed), so let's support some popular ones here. For performance reasons we want to offload their work to web workers in order not to block the main thread of execution.
 
-Web workers, naturally, are not imported by default, so we need to again adjust our esbuild configuration to include them. This time however, we'll define a separate esbuild profile for two reasons:
+Web workers, naturally, are not imported by default, so we need to again adjust our esbuild configuration to include them. This time however, we'll define a separate esbuild profile and we'll do it for two reasons:
 
 * they will be loaded on demand, so we don't want to bundle them with rest of the code
 * they are external files, so we don't need to watch them for changes and rebuild in dev
