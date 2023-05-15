@@ -263,6 +263,8 @@ Pay attention. The compiler, through slow recompilation, may be signalling probl
 
 Issues are generally easier and cheaper to fix when detected early and recompilation that's slowing down is a plainly visible warning sign you probably should take seriously.
 
+#### Footnotes
+
 [^1]: D. Thomas, A. Hunt. (2020). *The Pragmatic Programmer, 20th Anniversary Edition*. Pearson Education, Inc.
 
 [^2]: As of Elixir 1.6. See [Separate tracking structs from compile-time dependencies #6575](https://github.com/elixir-lang/elixir/pull/6575)

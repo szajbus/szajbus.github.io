@@ -118,6 +118,8 @@ Plug.Upload nicely abstracts away the process of handling temporary files. At th
 
 With it at your disposal, irrespective of where the external files come from, what format they're in and what your application does with them, you can rely on a universal, stable interface to ease both feature development and testing.
 
+#### Footnotes
+
 [^1]: Wherever in this article a word _process_ is used, it refers to Erlang VM process.
 
 [^2]: To keep the examples simple, I am not even trying to set `content_type` and `filename` fields in the structs. Depending on the situation they may or may not be available in the request data.

@@ -227,4 +227,6 @@ That's it. We have a basic code editor that supports syntax coloring for several
 
 The source code presented in this article can be found in GiHub repository: [szajbus/phoenix_monaco_example](https://github.com/szajbus/phoenix_monaco_example).
 
+#### Footnotes
+
 [^1]: IntelliSense is a general term for various code editing features, such as: code completion, parameter info, quick info, and member lists.
