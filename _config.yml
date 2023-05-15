@@ -7,6 +7,7 @@ url: "https://szajbus.dev"
 twitter_username: szajbus
 github_username: szajbus
 github_repo: szajbus/szajbus.github.io
+calendly: https://calendly.com/michal-szajbe/15min
 
 plugins:
   - jekyll-feed

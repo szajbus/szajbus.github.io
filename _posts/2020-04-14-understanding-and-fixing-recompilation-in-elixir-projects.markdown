@@ -7,7 +7,7 @@ excerpt: "Slow recompilation means slow feedback loop and distrupted workflow. L
 ---
 
 {% capture note %}
-:bulb: Do you need help optimizing your project's compilation time? <a href="mailto:{{site.email}}?subject=Elixir%20recompilation">Let's talk</a>.
+:bulb: Do you need help optimizing your project's compilation time? <a href="{{ site.calendly }}">Let's talk</a>.
 {% endcapture %}
 
 {% include note.html content=note %}
