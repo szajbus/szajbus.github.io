@@ -34,6 +34,18 @@ hr {
 
 p {
   margin: 1.25rem 0;
+
+  &.note {
+    background-color: $note-bg-color;
+    color: $primary-color;
+    border: $code-border-color 1px solid;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+
+  img.emoji {
+    vertical-align: text-bottom;
+  }
 }
 
 a {
@@ -218,6 +230,12 @@ footer.page-footnote {
 
   p {
     color: $dark-primary-color;
+
+    &.note {
+      background-color: $dark-note-bg-color;
+      color: $dark-primary-color;
+      border: $dark-code-border-color 1px solid;
+    }
   }
 
   a {

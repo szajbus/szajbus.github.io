@@ -6,6 +6,12 @@ categories: Elixir
 excerpt: "Slow recompilation means slow feedback loop and distrupted workflow. Let's find out how to fix this."
 ---
 
+{% capture note %}
+:bulb: Do you need help optimizing your project's compilation time? <a href="mailto:{{site.email}}?subject=Elixir%20recompilation">Let's talk</a>.
+{% endcapture %}
+
+{% include note.html content=note %}
+
 Our goal as programmers is to deliver value by writing code. It should be efficient, maintainable, but most importantly correct.
 
 Correctness can be checked at multiple stages of the development process, but the most immediate feedback we can get is from the compiler, test suite or the REPL.
@@ -262,6 +268,8 @@ Sometimes a quick, small change may result in removal of a crucial dependency an
 Pay attention. The compiler, through slow recompilation, may be signalling problems in your code. It may prompt you to rethink your recent architectural decisions.
 
 Issues are generally easier and cheaper to fix when detected early and recompilation that's slowing down is a plainly visible warning sign you probably should take seriously.
+
+{% include note.html content=note %}
 
 #### Footnotes
 
