@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-  font-size: xx-large;
+  font-size: x-large;
 }
 
 h2, h3, h4, h5, h6 {
@@ -80,13 +80,17 @@ nav {
 
   a {
     font-family: monospace;
-    margin-left: 2rem;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
 
     &.home {
+      display: block;
       font-family: monospace;
       font-weight: 600;
+      font-size: xx-large;
       color: $secondary-color;
-      margin-left: 0;
 
       :visited {
         color: $secondary-color;
