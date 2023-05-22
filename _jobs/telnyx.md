@@ -9,4 +9,4 @@ Member of Telephony Backend team, building and maintaining the control plane of 
 
 Earlier, member of Telephony Applications team, responsible for the development of services and tooling for controlling real time communications via the Telnyx API.
 
-Main technologies: Elixir/OTP, Python, Etcd, Elasticsearch, Cassandra, Kubernetes.
+Main technologies: Elixir/OTP, Python, Etcd, Elasticsearch, Docker, Kubernetes, Ansible.
