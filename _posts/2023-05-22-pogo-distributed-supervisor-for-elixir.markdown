@@ -16,6 +16,8 @@ While supervision and distribution are first-class citizens of the VM, the stand
 
 Unlike a typical supervisor, distributed supervisor is not a single process. It is many local supervisors running on different nodes, working in coordinated fashion. It abstracts away the complexity of scheduling and monitoring processes in distributed environment.
 
+![Distributed supervisor](/assets/images/posts/pogo/pogo-distributed-supervisor.png)
+
 ### Scheduling child processes
 
 When scheduling a process with a distributed supervisor no assumptions can be made about which node will actually start it, the only guarantee we get is that it will run "somewhere" in the cluster. Internally, _pogo_ builds a consistent hash ring consisting of all participating nodes, calculates the search key by hashing the child process' spec and determines which node in the ring "owns" the key. The local supervisor running on that node will then manage the process.
@@ -49,6 +51,8 @@ With `:pg`, process groups can be organised into named scopes that are completel
 In short, CAP theorem[^4] states that in the presence of network partition a distributed system can guarantee either consistency or availability, but not both. It should be now clear that _pogo_ guarantees availability.
 
 When network partition happens, our application will basically operate in two (or more) separated clusters, with each cluster running their own distributed supervisor on available nodes (even if it's only a single node). Previously scheduled child processes will now be duplicated. Once network connectivity is restored, the clusters will merge and extraneous child processes will be terminated.
+
+![Distributed supervisor during network partition](/assets/images/posts/pogo/pogo-distributed-supervisor-network-partition.png)
 
 ## When to use distributed supervisor
 
