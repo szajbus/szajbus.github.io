@@ -56,7 +56,7 @@ When network partition happens, our application will basically operate in two (o
 
 ## When to use distributed supervisor
 
-Distributed supervisor is a good fit for clustered application that need to effortlessly spread the load over available nodes while preserving all the benefits of typical Elixir's `Supervisor` or `DynamicSupervisor`.
+Distributed supervisor is a good fit for clustered applications that need to effortlessly spread the load over available nodes while preserving all the benefits of typical Elixir's `Supervisor` or `DynamicSupervisor`.
 
 ## Real world example
 
