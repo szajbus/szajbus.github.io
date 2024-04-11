@@ -116,7 +116,7 @@ config :esbuild,
 
 With the above configuration the editor should render correctly, but it is quite possible that the rest of application's CSS is now broken. That's because esbuild also bundles CSS and outputs the resulting file as `app.css` which conflicts with the `app.css` bundled by `tailwind` library. The CSS imported with `monaco-editor` and bundled by esbuild simply overwrite the CSS produced by tailwind.
 
-To resolve this conflict, let's rename our `assets/css/app.css` to `assets/css/style.css` and reconfigure tailwind in `config/confix.exs`.
+To resolve this conflict, let's rename our `assets/css/app.css` to `assets/css/style.css` and reconfigure tailwind in `config/config.exs`.
 
 ```elixir
 config :tailwind,
