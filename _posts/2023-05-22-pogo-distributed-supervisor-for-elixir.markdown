@@ -3,7 +3,7 @@ layout: "post"
 title: "Pogo - distributed supervisor for Elixir"
 date: "2023-05-22 08:00:00"
 categories: Elixir
-excerpt: "Pogo is a distributed supervisor built on top of Erlang process groups. It abstracts away the complexity process scheduling and supervision in distributed environment."
+excerpt: "Pogo is a distributed supervisor built on top of Erlang process groups. It abstracts away the complexity of process scheduling and supervision in distributed environment."
 ---
 
 Typical architecture of systems written for Erlang VM consists of a top-level process, known as a supervisor, which spawns and monitors child processes that can either act as workers or be supervisors themselves. Such hierarchical process structure is known as _supervision tree_. Supervisors are fundamental builing blocks of fault-tolerant applications and embodiment of the famous "let it crash" philosophy which, in case of a serious failure, prefers that a process be fully restarted (by its supervisor) to a known good state rather than perform overextensive error handling. Supervisor processes are responsible for managing the lifecycle of their child processes, which includes starting, termination, monitoring and possibly restarting them when they crash.
