@@ -2,6 +2,7 @@
 company: "Telnyx"
 title: "Senior Software Engineer"
 start_date: "2021-06-28"
+end_date: "2024-05-01"
 link: "https://telnyx.com"
 ---
 
