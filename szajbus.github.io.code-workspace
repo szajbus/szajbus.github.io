@@ -5,9 +5,12 @@
     }
   ],
   "settings": {
-    "liquid.format.enable": true,
+    "[liquid]": {
+      "editor.defaultFormatter": "sissel.shopify-liquid",
+      "liquid.format.enable": true
+    },
 		"files.associations": {
-			"*.html": "liquid"
-		}
+      "*.html": "liquid"
+    }
   }
 }
