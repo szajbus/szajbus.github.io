@@ -2,7 +2,7 @@
 layout: "default"
 title: "Michał Szajbe - Resume"
 description: >-
-  Software Engineer with 15+ years of experience in building and maintaining web applications and back-end systems in various business domains.
+  Software Engineer and Team Lead with 15+ years of experience in building and maintaining web applications and back-end systems in various business domains.
 ---
 
 <article class="resume">
@@ -24,34 +24,32 @@ description: >-
 
   </header>
 
-  <hr/>
 
   <section>
     <h2>About</h2>
 
     <p>
-      Software Engineer with 15+ years of experience in building and maintaining web applications and back-end systems in various business domains. Dedicated to delivering quality, efficient solutions to challenging problems, willing to take ownership of core components. Team player, continuous learner, open source contributor.
+      Software Engineer and Team Lead with 15+ years of experience in building and maintaining web applications and back-end systems in various business domains. Dedicated to delivering quality, efficient solutions to challenging problems, willing to take ownership of core components. Team player, continuous learner, open source contributor.
     </p>
   </section>
-
-  <hr/>
 
   <section>
     <h2>Experience</h2>
 
-    <ul>
+    <ul class="jobs">
       {%- assign sorted_jobs = site.jobs | sort: "end_date", "last" | reverse -%}
       {% for job in sorted_jobs %}
         <li>
-          <h3>{{ job.title }}</h3>
-          <div>
+          <h4>{{ job.title }}</h4>
+
+          <div class="company">
             {%- if job.link -%}
               <a href="{{ job.link }}" rel="nofollow">{{ job.company }}</a>
             {%- else -%}
               {{ job.company }}
             {%- endif -%}
-
           </div>
+
           <div class="meta">
             {{ job.start_date | date: site.theme_config.job_date_format }}
             -
@@ -76,8 +74,6 @@ description: >-
     </ul>
   </section>
 
-  <hr/>
-
   <section>
     <h2>Education</h2>
 
@@ -85,8 +81,8 @@ description: >-
       {%- assign sorted_education = site.education | sort: "start_date" | reverse -%}
       {% for edu in sorted_education %}
         <li>
-          <h3>{{ edu.major }}</h3>
-          <div>{{ edu.school }}</div>
+          <h4>{{ edu.major }}</h4>
+          <div class="school">{{ edu.school }}</div>
           <div class="meta">
             {{ edu.start_date | date: "%Y" }}
             -

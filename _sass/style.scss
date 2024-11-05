@@ -21,15 +21,11 @@ h1 {
 }
 
 h2, h3, h4, h5, h6 {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $secondary-color;
-}
-
-hr {
-  margin: 2rem 0;
 }
 
 p {
@@ -100,7 +96,7 @@ nav {
 }
 
 hr {
-  margin: 3rem auto;
+  margin: 3rem auto 1rem auto;
   text-align: center;
   width: 100%;
   border: 1px 0 0 0 solid $hr-color;
@@ -214,13 +210,27 @@ article {
     }
   }
 
-  h3 {
-    margin: 3em 0 0 0;
+  h2 {
+    margin: 5rem 0 0 0;
+  }
+
+  h4 {
+    margin: 1.5rem 0 0 0;
   }
 
   ul {
     list-style: none;
     padding-left: 0;
+
+    &.jobs {
+      li:not(:last-child) {
+        border-bottom: 1px solid $hr-color;
+      }
+    }
+  }
+
+  .company, .school {
+    font-style: italic;
   }
 
   .meta {
